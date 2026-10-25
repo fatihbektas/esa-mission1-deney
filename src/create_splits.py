@@ -35,7 +35,7 @@ for name, array in [
     if array.shape != expected_shape:
         raise ValueError(f"{name}: beklenmeyen boyut {array.shape}")
 
-val_start = pd.Timestamp("2006-10-01", tz="UTC").value
+val_start = pd.Timestamp("2005-01-01", tz="UTC").value
 test_start = pd.Timestamp("2007-01-01", tz="UTC").value
 
 val_position = int(np.searchsorted(timestamps, val_start))
@@ -107,7 +107,7 @@ protocol = {
         }
         for name, (start, stop) in splits.items()
     },
-    "validation_start_utc": "2006-10-01T00:00:00Z",
+    "validation_start_utc": "2005-01-01T00:00:00Z",
     "test_start_utc": "2007-01-01T00:00:00Z",
     "target": "any selected channel has Anomaly",
     "rare_event_policy": "negative unless overlapping Anomaly",
