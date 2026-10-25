@@ -1,0 +1,41 @@
+# Sanal ortamlar
+.venv/
+venv/
+env/
+
+# Python önbellekleri
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Ham ve işlenmiş veriler
+data/
+
+# Deney sonuçları ve model dosyaları
+results/
+runs/
+*.pt
+*.pth
+*.joblib
+*.pkl
+
+# Günlükler
+*.log
+
+# Yerel ortam değişkenleri
+.env
+.env.*
+!.env.example
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db
+
+# VS Code kişisel ayarları
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json

@@ -1,0 +1,12 @@
+{
+    "data_root": "data/raw",
+    "channels": [
+        "channel_41",
+        "channel_42",
+        "channel_43",
+        "channel_44",
+        "channel_45",
+        "channel_46"
+    ],
+    "frequency": "30s"
+}
