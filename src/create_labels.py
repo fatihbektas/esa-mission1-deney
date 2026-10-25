@@ -80,9 +80,12 @@ for category, filename in categories.items():
         no_grid_point = 0
 
         for row in selected.itertuples(index=False):
-            # Kapalı aralık: StartTime <= zaman <= EndTime
+            # t noktasının etiketi, (t - 30 sn, t] aralığını temsil eder.
+            # [StartTime, EndTime] olayıyla kesişen aralıkları işaretle.
+            step = pd.Timedelta(config["frequency"])
+
             left = grid.searchsorted(row.StartTime, side="left")
-            right = grid.searchsorted(row.EndTime, side="right")
+            right = grid.searchsorted(row.EndTime + step, side="left")
 
             if left == right:
                 no_grid_point += 1
@@ -94,7 +97,7 @@ for category, filename in categories.items():
             "category": category,
             "annotation_rows": len(selected),
             "positive_grid_points": int(mask[:, column].sum()),
-            "annotation_rows_without_grid_point": no_grid_point,
+            "annotation_rows_without_bin": no_grid_point,
         })
 
     mask.flush()
